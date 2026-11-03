@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f7f2">
+  <title>Продукт — свежие продукты рядом</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topline"><div class="shell"><div class="top-left"><span>✦ Доставка свежих продуктов</span><span><i class="dot">●</i> Сегодня с 9:00 до 22:00</span></div><a href="#delivery">Условия доставки →</a></div></div>
+  <header><div class="shell head">
+    <a class="brand" href="#"><span class="brand-mark">п</span> продукт</a>
+    <nav class="nav"><a href="#catalog">Каталог</a><a href="#about">О нас</a><a href="#delivery">Доставка</a></nav>
+    <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Найти продукты..."></label>
+    <div class="head-actions"><button class="icon-btn" aria-label="Избранное" onclick="showToast('Избранное появится здесь')">♡</button><button class="icon-btn" aria-label="Корзина" onclick="showToast('В корзине: '+cart+' '+word(cart))">🛒<span class="cart-count" id="cartCount">0</span></button></div>
+  </div></header>
+  <main class="shell">
+    <section class="hero"><div class="hero-card"><div class="hero-copy"><div class="eyebrow">Хорошее начинается с простого</div><h1>Свежесть<br>каждый день</h1><p>Отборные продукты от местных фермеров и любимых производителей — прямо к вашему столу.</p><button class="primary" onclick="document.querySelector('#catalog').scrollIntoView({behavior:'smooth'})">Выбрать продукты <span>→</span></button></div><div class="hero-art"><div class="sun"></div><div class="produce">🥬</div><div class="leaf">🌿</div><div class="mini-note">Собрано сегодня <span>✦</span></div></div></div></section>
+    <section class="perks" id="about"><div class="perk"><div class="perk-ico">🚲</div><div><strong>Бережная доставка</strong><small>Бесплатно от 2 000 сом</small></div></div><div class="perk"><div class="perk-ico">🌱</div><div><strong>Свежий выбор</strong><small>От локальных фермеров</small></div></div><div class="perk"><div class="perk-ico">♧</div><div><strong>Честный состав</strong><small>Знаем, что внутри</small></div></div><div class="perk"><div class="perk-ico">↺</div><div><strong>Легкий возврат</strong><small>Если что-то не так</small></div></div></section>
+    <section id="catalog"><div class="section-head"><div><h2>Что ищем сегодня?</h2><p>Выбирайте любимое — остальное мы привезём</p></div><a class="all-link" href="#products" onclick="filterCategory('Все')">Весь каталог →</a></div>
+      <div class="categories"><button class="category active" onclick="filterCategory('Все',this)"><span class="emoji">🧺</span><strong>Всё сразу</strong></button><button class="category" onclick="filterCategory('Овощи',this)"><span class="emoji">🥑</span><strong>Овощи</strong></button><button class="category" onclick="filterCategory('Фрукты',this)"><span class="emoji">🍊</span><strong>Фрукты</strong></button><button class="category" onclick="filterCategory('Молочное',this)"><span class="emoji">🥛</span><strong>Молочное</strong></button><button class="category" onclick="filterCategory('Бакалея',this)"><span class="emoji">🥖</span><strong>Бакалея</strong></button><button class="category" onclick="filterCategory('Напитки',this)"><span class="emoji">🧃</span><strong>Напитки</strong></button></div>
+      <div class="section-head"><div><h2 id="products">Популярное</h2><p>То, что чаще всего выбирают</p></div><a class="all-link" href="#catalog" onclick="filterCategory('Все')">Смотреть всё →</a></div>
+      <div class="products" id="productGrid"></div>
+    </section>
+  </main>
+  <footer id="delivery"><div class="shell footer-inner"><div><div class="footer-brand">продукт ✳</div><p>Свежие продукты — рядом с вами.</p></div><div class="footer-right">Ежедневно, 9:00–22:00<br>Бишкек · +996 (700) 123-456</div></div></footer>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
